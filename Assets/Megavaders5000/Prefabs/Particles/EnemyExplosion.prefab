@@ -12,6 +12,7 @@ GameObject:
   - 199: {fileID: 19900500}
   - 114: {fileID: 11400288}
   - 82: {fileID: 8250870}
+  - 114: {fileID: 11432856}
   m_Layer: 0
   m_Name: EnemyExplosion
   m_TagString: Untagged
@@ -116,6 +117,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8419a5926e981714f8f3e92f63070771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11432856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f114b0bfb6540ba91ec5e85cc0c6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 567a77a41485143b582ea5c346df9f3d, type: 3}
+  - {fileID: 8300000, guid: 4e62242da2ca546efaa72ca302e49e81, type: 3}
+  - {fileID: 8300000, guid: 1e2176cd5bb7e4880a79d1fa6956dc93, type: 3}
 --- !u!198 &19800500
 ParticleSystem:
   m_ObjectHideFlags: 1
