@@ -29,7 +29,12 @@ public class SceneGamePlayManager : MonoBehaviour
     public GameObject PlayerExplosionParticles;
     public AudioClip ExplosionSound;
 
-    public AudioClip[] MarchingSounds;
+	[SerializeField] private Metronome _metronome;
+	[SerializeField] private int _ticksPerMove = 4;
+	private int _ticksWrapped;
+	[SerializeField] private double _baseTempo = 90.0;
+	[SerializeField] private double _tempoIncreasePerEnemy = 2.0;
+	private int _enemiesKilled;
 
 
     // The container for our invaders and a container for their missiles.
@@ -70,19 +75,10 @@ public class SceneGamePlayManager : MonoBehaviour
     // Maintain a list of the invaders. 
 	private List<EnemyController> enemiesList;
 
-    // Enemy update Timer
-    private float enemyUpdateTimer = 0.0f;
-    private float enemyUpdateTimerMax = 0.5f;       // Maximum amount of time to wait between enemy update. 
-                                                    // Enemy Updates happen faster as waves increase and less enemies exist
     // Invader missile drop controls
     private float lastFireTime  = 0.0f;             // when was the last missile fired?    
     private float fireDelay     = 1.0f;             // Fire delay, we dont want a bunch of missiles flying out
     private int maxMissiles     = 10;               // Maximum allowable fired missiles
-
-
-
-	MarchingSoundManager marchingSoundManager = null;
-
     
     void Awake()
 	{
@@ -95,15 +91,12 @@ public class SceneGamePlayManager : MonoBehaviour
 		{
 			Destroy(this.gameObject);
 		}
-		marchingSoundManager = GetComponent<MarchingSoundManager>();
 	}
 
 	// Use this for initialization
 	void Start () 
     {
-
-
-
+		_metronome.Ticked += OnMetronomeTick;
         
 		enemiesList = new List<EnemyController>();
 
@@ -113,30 +106,13 @@ public class SceneGamePlayManager : MonoBehaviour
 //		Debug.Log("START CALLED! " +  this.currentScore);
 	}
 
-
-	// Update is called once per frame
-	void Update () 
-    {
-	    if( gameState == GameStates.START)
-        {
-			if (Input.GetButtonUp(InputHelper.FIREBUTTON))
-            {
-                
-            }
-        }
-
-        else if(gameState == GameStates.PLAYING)
-        {
-            // Nothing to do here currently...
-            enemyUpdateTimer += Time.deltaTime;
-            if (enemyUpdateTimer >= enemyUpdateTimerMax)
-            {
-                enemyUpdateTimer = 0.0f;
-                moveEnemies();
-
-            }
-        }
-
+	void OnMetronomeTick(double tickTime)
+	{
+		if (_ticksWrapped == 0)
+		{
+			moveEnemies();
+		}
+		_ticksWrapped = (_ticksWrapped + 1) % _ticksPerMove;
 	}
 
     public bool isPlaying()
@@ -147,6 +123,8 @@ public class SceneGamePlayManager : MonoBehaviour
     // Start the game; update the game start to PLAYING,
     public void StartGame()
     {
+		_metronome.SetTempo(_baseTempo);
+
         Player.gameLogicManager = this;
 
         // Set all Shields to active:
@@ -217,7 +195,6 @@ public class SceneGamePlayManager : MonoBehaviour
         }
         // Setup Enemy Invader Speeds..
         float cwave = (float)currentWave;
-        enemyUpdateTimerMax = 0.35f - (0.01f * (cwave-1));
 		EnemyController.MoveDirection = 1.0f;
 		EnemyController.MoveVel = 0.1f + (0.01f * (cwave - 1)); // Start out each moving just a bit more
 
@@ -225,7 +202,9 @@ public class SceneGamePlayManager : MonoBehaviour
 
 	public void EnemyHit(EnemyController enemy)
     {
-        GameObject go = Instantiate(ExplosionParticles) as GameObject;
+		_enemiesKilled++;
+
+		GameObject go = Instantiate(ExplosionParticles) as GameObject;
 		go.transform.position = enemy.transform.position;
 
 		updateScore( enemy.ScoreValue );
@@ -234,7 +213,7 @@ public class SceneGamePlayManager : MonoBehaviour
 		Destroy(enemy.gameObject);
 
         // Increase the update speed
-        enemyUpdateTimerMax -= 0.005f;
+		_metronome.SetTempo(_baseTempo + (_tempoIncreasePerEnemy * _enemiesKilled));
 
         // Slightly increase move distance
 		EnemyController.MoveVel += 0.005f;
@@ -279,8 +258,6 @@ public class SceneGamePlayManager : MonoBehaviour
         bool moveDown = false;
         bool hitBottom = false;
         bool isPlaying = (gameState == GameStates.PLAYING);
-
-		if(gameState == GameStates.PLAYING && marchingSoundManager != null) marchingSoundManager.PlayMarchingBeat();
 
         for (int cnt = 0; cnt < maxCount; cnt++)
         {
