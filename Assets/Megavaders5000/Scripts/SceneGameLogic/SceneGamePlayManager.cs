@@ -33,8 +33,9 @@ public class SceneGamePlayManager : MonoBehaviour
 	[SerializeField] private int _ticksPerMove = 4;
 	private int _ticksWrapped;
 	[SerializeField] private double _baseTempo = 90.0;
-	[SerializeField] private double _tempoIncreasePerEnemy = 2.0;
-	private int _enemiesKilled;
+	[SerializeField] private int _downMovesPerTempoIncrease = 3;
+	[SerializeField] private double _tempoIncreaseAmount = 10;
+	private int _downMovesDone = 0;
 
 
     // The container for our invaders and a container for their missiles.
@@ -202,8 +203,6 @@ public class SceneGamePlayManager : MonoBehaviour
 
 	public void EnemyHit(EnemyController enemy)
     {
-		_enemiesKilled++;
-
 		GameObject go = Instantiate(ExplosionParticles) as GameObject;
 		go.transform.position = enemy.transform.position;
 
@@ -211,9 +210,6 @@ public class SceneGamePlayManager : MonoBehaviour
 
 		enemiesList.Remove(enemy);
 		Destroy(enemy.gameObject);
-
-        // Increase the update speed
-		_metronome.SetTempo(_baseTempo + (_tempoIncreasePerEnemy * _enemiesKilled));
 
         // Slightly increase move distance
 		EnemyController.MoveVel += 0.005f;
@@ -293,6 +289,16 @@ public class SceneGamePlayManager : MonoBehaviour
                 float yloc = enemyController.dropDownRow();
                 if (yloc <= -4.25f) hitBottom = true;
             }
+
+			// increase the tempo
+			int modMoves = (++_downMovesDone) % _downMovesPerTempoIncrease;
+
+			if (modMoves == 0)
+			{
+				var tempo = _baseTempo + (_tempoIncreaseAmount * (_downMovesDone / _downMovesPerTempoIncrease));
+				_metronome.SetTempo(tempo);
+				Debug.Log("Set tempo to " + tempo);
+			}
         }
 
         if (hitBottom)  DoGameOver();

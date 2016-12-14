@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6119446}
   - 50: {fileID: 5069862}
   - 82: {fileID: 8297048}
+  - 114: {fileID: 11475076}
   m_Layer: 0
   m_Name: EnemyMissile
   m_TagString: Untagged
@@ -71,7 +72,8 @@ AudioSource:
   m_GameObject: {fileID: 145888}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24395324, guid: aefe4acb3d1e841bca2b65d783408a7f,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4397b33bdefd64b2ca7783a74045316e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -150,6 +152,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yvel: 0.07
   Tracer: {fileID: 100280, guid: 5a1cb796f19c6764c85a784f7c8925bd, type: 2}
+--- !u!114 &11475076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f114b0bfb6540ba91ec5e85cc0c6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 7164c6907b5a1474e96211c28c63e20d, type: 3}
+  - {fileID: 8300000, guid: 73dd6961f9c124b1db54628706fd8f8e, type: 3}
+  - {fileID: 8300000, guid: 8d73e0a2b68624e8cbb6669cc84d9040, type: 3}
+  - {fileID: 8300000, guid: ac57311c3002e4cc9b272d3ec6f81c49, type: 3}
 --- !u!212 &21245888
 SpriteRenderer:
   m_ObjectHideFlags: 1

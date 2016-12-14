@@ -140,8 +140,9 @@ MonoBehaviour:
   ExplosionSound: {fileID: 8300000, guid: 8e76fe087fcbd7443a1269a2e785975c, type: 3}
   _metronome: {fileID: 1821876630}
   _ticksPerMove: 4
-  _baseTempo: 90
-  _tempoIncreasePerEnemy: 5
+  _baseTempo: 116
+  _downMovesPerTempoIncrease: 3
+  _tempoIncreaseAmount: 10
   EnemyContainer: {fileID: 2073878826}
   EnemyMissileContainer: {fileID: 507362493}
   Player: {fileID: 605858298}
