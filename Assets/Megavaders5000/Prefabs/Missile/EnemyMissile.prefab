@@ -164,10 +164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clips:
-  - {fileID: 8300000, guid: 7164c6907b5a1474e96211c28c63e20d, type: 3}
-  - {fileID: 8300000, guid: 73dd6961f9c124b1db54628706fd8f8e, type: 3}
-  - {fileID: 8300000, guid: 8d73e0a2b68624e8cbb6669cc84d9040, type: 3}
-  - {fileID: 8300000, guid: ac57311c3002e4cc9b272d3ec6f81c49, type: 3}
+  - {fileID: 8300000, guid: ee2c1822e0bfe4fd9848bc78a09d1fe6, type: 3}
+  - {fileID: 8300000, guid: e109fd655edc14664a14a0c636a74d37, type: 3}
+  - {fileID: 8300000, guid: f196d4481744949c69f143e3a7bddf58, type: 3}
 --- !u!212 &21245888
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -12,6 +12,13 @@ public enum GameStates
 	GETTING_SCORE
 };
 
+[System.Serializable]
+public class TempoBeatChangeInfo
+{
+	public double _tempoIncrease = 10;
+	public StepSequencer[] _seqsToEnable;
+	public StepSequencer[] _seqsToDisable;
+}
 
 public class SceneGamePlayManager : MonoBehaviour 
 {
@@ -34,7 +41,8 @@ public class SceneGamePlayManager : MonoBehaviour
 	private int _ticksWrapped;
 	[SerializeField] private double _baseTempo = 90.0;
 	[SerializeField] private int _downMovesPerTempoIncrease = 3;
-	[SerializeField] private double _tempoIncreaseAmount = 10;
+	[SerializeField] private TempoBeatChangeInfo[] _tempoBeatChangeInfo;
+	private int _currentTempoBeatChangeIdx = -1;
 	private int _downMovesDone = 0;
 
 
@@ -231,18 +239,20 @@ public class SceneGamePlayManager : MonoBehaviour
 
 		gameState = GameStates.GAME_OVER;
         Player.gameObject.SetActive(false);
-		Invoke("GameOverAfterExplosion", 0.85f);
-        
-        
+
+		var audioSource = go.GetComponent<AudioSource>();
+		StartCoroutine(WaitForGameOverSound(audioSource));
     }
 
-
-	public void GameOverAfterExplosion()
+	public IEnumerator WaitForGameOverSound(AudioSource audioSource)
 	{
-//		Debug.Log("OUT SCORE: " +currentScore);
+		Debug.Log(audioSource.name);
+		while (audioSource != null && audioSource.isPlaying)
+		{
+			Debug.Log("wait");
+			yield return null;
+		}
 		SceneManager.LoadScene("GameOver");
-
-
 	}
 
 
@@ -295,9 +305,22 @@ public class SceneGamePlayManager : MonoBehaviour
 
 			if (modMoves == 0)
 			{
-				var tempo = _baseTempo + (_tempoIncreaseAmount * (_downMovesDone / _downMovesPerTempoIncrease));
-				_metronome.SetTempo(tempo);
-				Debug.Log("Set tempo to " + tempo);
+				if (++_currentTempoBeatChangeIdx < _tempoBeatChangeInfo.Length)
+				{
+					var tbc = _tempoBeatChangeInfo[_currentTempoBeatChangeIdx];
+					var tempo = _metronome.GetTempo() + tbc._tempoIncrease;
+					_metronome.SetTempo(tempo);
+					Debug.Log("Set tempo to " + tempo);
+
+					foreach (var seq in tbc._seqsToDisable)
+					{
+						seq.Suspend = true;
+					}
+					foreach (var seq in tbc._seqsToEnable)
+					{
+						seq.Suspend = false;
+					}
+				}
 			}
         }
 

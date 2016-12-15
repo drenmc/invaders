@@ -35,6 +35,11 @@ public class Metronome : MonoBehaviour
         Recalculate();
     }
 
+	public double GetTempo()
+	{
+		return _tempo;
+	}
+
     /// <summary>
     /// Recalculate the tick length and reset the next tick time
     /// </summary>

@@ -141,8 +141,31 @@ MonoBehaviour:
   _metronome: {fileID: 1821876630}
   _ticksPerMove: 4
   _baseTempo: 116
-  _downMovesPerTempoIncrease: 3
-  _tempoIncreaseAmount: 10
+  _downMovesPerTempoIncrease: 2
+  _tempoBeatChangeInfo:
+  - _tempoIncrease: 10
+    _seqsToEnable: []
+    _seqsToDisable: []
+  - _tempoIncrease: 10
+    _seqsToEnable:
+    - {fileID: 1342538172}
+    - {fileID: 1959756927}
+    - {fileID: 2020477684}
+    - {fileID: 1474824871}
+    - {fileID: 1201588239}
+    _seqsToDisable:
+    - {fileID: 1971548555}
+    - {fileID: 1647376914}
+    - {fileID: 441004899}
+  - _tempoIncrease: 10
+    _seqsToEnable: []
+    _seqsToDisable: []
+  - _tempoIncrease: 10
+    _seqsToEnable:
+    - {fileID: 428326205}
+    - {fileID: 522405108}
+    - {fileID: 378570584}
+    _seqsToDisable: []
   EnemyContainer: {fileID: 2073878826}
   EnemyMissileContainer: {fileID: 507362493}
   Player: {fileID: 605858298}
@@ -293,10 +316,149 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
   m_PrefabInternal: {fileID: 1069670515}
+--- !u!1 &268736927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 268736928}
+  m_Layer: 0
+  m_Name: Beat1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &268736928
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268736927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1971548554}
+  - {fileID: 1647376913}
+  - {fileID: 441004898}
+  m_Father: {fileID: 1821876631}
+  m_RootOrder: 0
 --- !u!4 &357076505 stripped
 Transform:
   m_PrefabParentObject: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
   m_PrefabInternal: {fileID: 500461546}
+--- !u!1 &378570582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 378570583}
+  - 114: {fileID: 378570585}
+  - 114: {fileID: 378570584}
+  m_Layer: 0
+  m_Name: snare3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &378570583
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 378570582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2072807112}
+  m_RootOrder: 2
+--- !u!114 &378570584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 378570582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 1
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &378570585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 378570582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 378570584}
+  _audioClip: {fileID: 8300000, guid: 1bc309d03ad4c4abcbcb72613720e95d, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
 --- !u!1001 &387563632
 Prefab:
   m_ObjectHideFlags: 0
@@ -306,11 +468,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.70000005
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.67000008
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.z
@@ -339,6 +501,272 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &428326203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 428326204}
+  - 114: {fileID: 428326206}
+  - 114: {fileID: 428326205}
+  m_Layer: 0
+  m_Name: snare1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &428326204
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 428326203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2072807112}
+  m_RootOrder: 0
+--- !u!114 &428326205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 428326203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 1
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &428326206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 428326203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 428326205}
+  _audioClip: {fileID: 8300000, guid: ff4a5ecb5cb724b75a59be3319bf80c0, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
+--- !u!1 &441004897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 441004898}
+  - 114: {fileID: 441004900}
+  - 114: {fileID: 441004899}
+  m_Layer: 0
+  m_Name: b
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &441004898
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 441004897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 268736928}
+  m_RootOrder: 2
+--- !u!114 &441004899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 441004897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 0
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &441004900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 441004897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 441004899}
+  _audioClip: {fileID: 8300000, guid: a3cefca982ac04693b552c9a599b386b, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
 --- !u!1001 &500461546
 Prefab:
   m_ObjectHideFlags: 0
@@ -348,11 +776,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.300000012
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.67000008
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.z
@@ -408,6 +836,115 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &522405106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 522405107}
+  - 114: {fileID: 522405109}
+  - 114: {fileID: 522405108}
+  m_Layer: 0
+  m_Name: snare2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522405107
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522405106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2072807112}
+  m_RootOrder: 1
+--- !u!114 &522405108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522405106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 1
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &522405109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522405106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 522405108}
+  _audioClip: {fileID: 8300000, guid: 33816e924814348e2a61e736fd8be96f, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
 --- !u!4 &605858296 stripped
 Transform:
   m_PrefabParentObject: {fileID: 440454, guid: 20b4d54347c60ae438cfa27d9b0df593, type: 2}
@@ -455,11 +992,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.20000005
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.67000008
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 416426, guid: 6660c1b0b7c449843b0c62c122f9f421, type: 2}
       propertyPath: m_LocalPosition.z
@@ -574,6 +1111,163 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &1201588237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1201588238}
+  - 114: {fileID: 1201588240}
+  - 114: {fileID: 1201588239}
+  m_Layer: 0
+  m_Name: fsharp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201588238
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201588237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1327538116}
+  m_RootOrder: 4
+--- !u!114 &1201588239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201588237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 1
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &1201588240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201588237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 1201588239}
+  _audioClip: {fileID: 8300000, guid: 9161f78ccf8d64958878892a8c3e1bf6, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
 --- !u!1001 &1214338969
 Prefab:
   m_ObjectHideFlags: 0
@@ -616,6 +1310,509 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20b4d54347c60ae438cfa27d9b0df593, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1327538115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1327538116}
+  m_Layer: 0
+  m_Name: Beat2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1327538116
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1327538115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1342538171}
+  - {fileID: 1959756926}
+  - {fileID: 2020477683}
+  - {fileID: 1474824870}
+  - {fileID: 1201588238}
+  m_Father: {fileID: 1821876631}
+  m_RootOrder: 1
+--- !u!1 &1342538170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1342538171}
+  - 114: {fileID: 1342538173}
+  - 114: {fileID: 1342538172}
+  m_Layer: 0
+  m_Name: csharp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1342538171
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342538170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1327538116}
+  m_RootOrder: 0
+--- !u!114 &1342538172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342538170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 1
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &1342538173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342538170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 1342538172}
+  _audioClip: {fileID: 8300000, guid: 82ea2c7bed3734a8d98d1238886ca55d, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
+--- !u!1 &1474824869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1474824870}
+  - 114: {fileID: 1474824872}
+  - 114: {fileID: 1474824871}
+  m_Layer: 0
+  m_Name: d
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1474824870
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474824869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1327538116}
+  m_RootOrder: 3
+--- !u!114 &1474824871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474824869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 1
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &1474824872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474824869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 1474824871}
+  _audioClip: {fileID: 8300000, guid: ff4a5ecb5cb724b75a59be3319bf80c0, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
+--- !u!1 &1647376912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1647376913}
+  - 114: {fileID: 1647376915}
+  - 114: {fileID: 1647376914}
+  m_Layer: 0
+  m_Name: aflat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1647376913
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647376912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 268736928}
+  m_RootOrder: 1
+--- !u!114 &1647376914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647376912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 0
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &1647376915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647376912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 1647376914}
+  _audioClip: {fileID: 8300000, guid: 4397b33bdefd64b2ca7783a74045316e, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
 --- !u!1 &1821876629
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +1852,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1971548554}
+  - {fileID: 268736928}
+  - {fileID: 1327538116}
+  - {fileID: 2072807112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &1849046460
@@ -808,6 +2007,163 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1959268899}
+--- !u!1 &1959756925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1959756926}
+  - 114: {fileID: 1959756928}
+  - 114: {fileID: 1959756927}
+  m_Layer: 0
+  m_Name: aflat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1959756926
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1959756925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1327538116}
+  m_RootOrder: 1
+--- !u!114 &1959756927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1959756925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 1
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &1959756928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1959756925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 1959756927}
+  _audioClip: {fileID: 8300000, guid: 4397b33bdefd64b2ca7783a74045316e, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
 --- !u!1 &1971548553
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +2175,7 @@ GameObject:
   - 114: {fileID: 1971548556}
   - 114: {fileID: 1971548555}
   m_Layer: 0
-  m_Name: BeatSampler
+  m_Name: csharp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -835,7 +2191,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1821876631}
+  m_Father: {fileID: 268736928}
   m_RootOrder: 0
 --- !u!114 &1971548555
 MonoBehaviour:
@@ -853,25 +2209,19 @@ MonoBehaviour:
   _steps:
   - Active: 1
     MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
     Duration: 0
   - Active: 0
     MidiNoteNumber: 0
     Duration: 0
   - Active: 1
     MidiNoteNumber: 60
-    Duration: 0
-  - Active: 0
-    MidiNoteNumber: 0
-    Duration: 0
-  - Active: 0
-    MidiNoteNumber: 0
-    Duration: 0
-  - Active: 0
-    MidiNoteNumber: 0
-    Duration: 0
-  - Active: 1
-    MidiNoteNumber: 60
-    Duration: 0
+    Duration: 0.25
   - Active: 0
     MidiNoteNumber: 0
     Duration: 0
@@ -883,21 +2233,75 @@ MonoBehaviour:
     Duration: 0
   - Active: 1
     MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
     Duration: 0
   - Active: 0
     MidiNoteNumber: 0
     Duration: 0
   - Active: 1
-    MidiNoteNumber: 70
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
     Duration: 0
   - Active: 1
-    MidiNoteNumber: 72
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
     Duration: 0
   - Active: 1
-    MidiNoteNumber: 74
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
     Duration: 0
   - Active: 1
-    MidiNoteNumber: 76
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
     Duration: 0
 --- !u!114 &1971548556
 MonoBehaviour:
@@ -917,6 +2321,193 @@ MonoBehaviour:
   _numVoices: 2
   _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
     type: 2}
+--- !u!1 &2020477682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2020477683}
+  - 114: {fileID: 2020477685}
+  - 114: {fileID: 2020477684}
+  m_Layer: 0
+  m_Name: b
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2020477683
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020477682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1327538116}
+  m_RootOrder: 2
+--- !u!114 &2020477684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020477682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f9591d0f57584eb16760b7d831101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suspend: 1
+  _metronome: {fileID: 1821876630}
+  _steps:
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 1
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+  - Active: 0
+    MidiNoteNumber: 60
+    Duration: 0.25
+  - Active: 0
+    MidiNoteNumber: 0
+    Duration: 0
+--- !u!114 &2020477685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020477682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388cae0895c55643aa27e15b50b17d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequencer: {fileID: 2020477684}
+  _audioClip: {fileID: 8300000, guid: a3cefca982ac04693b552c9a599b386b, type: 3}
+  _attackTime: 0
+  _releaseTime: 1.149999976158142
+  _numVoices: 2
+  _samplerVoicePrefab: {fileID: 11443662, guid: b0eec6dc1b6854a10921118e97253ed3,
+    type: 2}
+--- !u!1 &2072807111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2072807112}
+  m_Layer: 0
+  m_Name: Beat3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2072807112
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2072807111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 428326204}
+  - {fileID: 522405107}
+  - {fileID: 378570583}
+  m_Father: {fileID: 1821876631}
+  m_RootOrder: 2
 --- !u!1 &2073878825
 GameObject:
   m_ObjectHideFlags: 0
