@@ -11,7 +11,7 @@ GameObject:
   - 82: {fileID: 8226162}
   - 114: {fileID: 11443662}
   m_Layer: 0
-  m_Name: SamplerVoice
+  m_Name: SamplerVoice_Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ AudioSource:
   m_GameObject: {fileID: 130866}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24373690, guid: aefe4acb3d1e841bca2b65d783408a7f,
+  OutputAudioMixerGroup: {fileID: 24392718, guid: aefe4acb3d1e841bca2b65d783408a7f,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0

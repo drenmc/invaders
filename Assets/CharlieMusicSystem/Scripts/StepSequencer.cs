@@ -15,6 +15,7 @@ public class StepSequencer : MonoBehaviour
     public delegate void HandleTick(double tickTime, int midiNoteNumber, double duration);
 
     public event HandleTick Ticked;
+	public event Action<StepSequencer> Looped;
 
     public bool Suspend;
 
@@ -32,6 +33,19 @@ public class StepSequencer : MonoBehaviour
         return _steps;
     }
 #endif
+
+	public int CurrentTick
+	{
+		get
+		{
+			return _currentTick;
+		}
+	}
+
+	public void Reset()
+	{
+		_currentTick = 0;
+	}
 
     private void OnEnable()
     {
@@ -69,5 +83,10 @@ public class StepSequencer : MonoBehaviour
         }
 
         _currentTick = (_currentTick + 1) % numSteps;
+
+		if (_currentTick == 0 && Looped != null)
+		{
+			Looped(this);
+		}
     }
 }

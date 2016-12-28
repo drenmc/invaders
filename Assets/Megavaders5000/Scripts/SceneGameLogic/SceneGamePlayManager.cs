@@ -42,8 +42,11 @@ public class SceneGamePlayManager : MonoBehaviour
 	[SerializeField] private double _baseTempo = 90.0;
 	[SerializeField] private int _downMovesPerTempoIncrease = 3;
 	[SerializeField] private TempoBeatChangeInfo[] _tempoBeatChangeInfo;
+	[SerializeField] private TransitionSequence _transitionSeq;
+	private StepSequencer[] _seqs;
 	private int _currentTempoBeatChangeIdx = -1;
 	private int _downMovesDone = 0;
+	private bool _waitingForDownbeat = false;
 
 
     // The container for our invaders and a container for their missiles.
@@ -100,6 +103,8 @@ public class SceneGamePlayManager : MonoBehaviour
 		{
 			Destroy(this.gameObject);
 		}
+
+		_seqs = FindObjectsOfType<StepSequencer>();
 	}
 
 	// Use this for initialization
@@ -122,6 +127,7 @@ public class SceneGamePlayManager : MonoBehaviour
 			moveEnemies();
 		}
 		_ticksWrapped = (_ticksWrapped + 1) % _ticksPerMove;
+		if (_waitingForDownbeat) CheckTransition();
 	}
 
     public bool isPlaying()
@@ -305,28 +311,55 @@ public class SceneGamePlayManager : MonoBehaviour
 
 			if (modMoves == 0)
 			{
-				if (++_currentTempoBeatChangeIdx < _tempoBeatChangeInfo.Length)
-				{
-					var tbc = _tempoBeatChangeInfo[_currentTempoBeatChangeIdx];
-					var tempo = _metronome.GetTempo() + tbc._tempoIncrease;
-					_metronome.SetTempo(tempo);
-					Debug.Log("Set tempo to " + tempo);
-
-					foreach (var seq in tbc._seqsToDisable)
-					{
-						seq.Suspend = true;
-					}
-					foreach (var seq in tbc._seqsToEnable)
-					{
-						seq.Suspend = false;
-					}
-				}
+				_waitingForDownbeat = true;
 			}
         }
 
         if (hitBottom)  DoGameOver();
     }
 
+	private void CheckTransition()
+	{
+		if (!_waitingForDownbeat) return;
+
+		var isDownbeat = false;
+
+		foreach (var seq in _seqs)
+		{
+			if (!seq.Suspend && seq.CurrentTick == 0)
+			{
+				isDownbeat = true;
+				break;
+			}
+		}
+
+		if (!isDownbeat)
+		{
+			return;
+		}
+
+		if (++_currentTempoBeatChangeIdx < _tempoBeatChangeInfo.Length)
+		{
+			var tbc = _tempoBeatChangeInfo[_currentTempoBeatChangeIdx];
+			var tempo = _metronome.GetTempo() + tbc._tempoIncrease;
+			_metronome.SetTempo(tempo);
+			Debug.Log("Set tempo to " + tempo);
+
+			foreach (var seq in tbc._seqsToDisable)
+			{
+				seq.Suspend = true;
+			}
+			foreach (var seq in tbc._seqsToEnable)
+			{
+				seq.Reset();
+				seq.Suspend = false;
+			}
+
+			_transitionSeq.Play();
+		}
+
+		_waitingForDownbeat = false;
+	}
 
 	private void enemyFireMissile(EnemyController enemy)
     {
