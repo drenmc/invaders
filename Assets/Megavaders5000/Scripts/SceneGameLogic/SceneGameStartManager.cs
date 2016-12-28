@@ -21,6 +21,8 @@ public class SceneGameStartManager : MonoBehaviour
 	public GameObject[] ScoreValues;		// Labels that display the value of an Enemy; 
 	public HighScoresViewManager HighScoresViewer;
 
+	public AudioClip[] ExplodeSounds;
+	[SerializeField] private AudioSource _audioSource;
 	// Hooked up in Editor End
 
 
@@ -96,7 +98,8 @@ public class SceneGameStartManager : MonoBehaviour
 		go.SetActive(true);
 		go.transform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, pos);
 
-
+		_audioSource.clip = ExplodeSounds[which];
+		_audioSource.Play();
 	}
 	
 	// Update is called once per frame
