@@ -84,7 +84,7 @@ public class StepSequencer : MonoBehaviour
 
         _currentTick = (_currentTick + 1) % numSteps;
 
-		if (_currentTick == 0 && Looped != null)
+		if (!Suspend && _currentTick == 0 && Looped != null)
 		{
 			Looped(this);
 		}

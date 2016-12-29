@@ -248,6 +248,11 @@ public class SceneGamePlayManager : MonoBehaviour
 
 		var audioSource = go.GetComponent<AudioSource>();
 		StartCoroutine(WaitForGameOverSound(audioSource));
+
+		foreach (var seq in _seqs)
+		{
+			seq.Suspend = true;
+		}
     }
 
 	public IEnumerator WaitForGameOverSound(AudioSource audioSource)

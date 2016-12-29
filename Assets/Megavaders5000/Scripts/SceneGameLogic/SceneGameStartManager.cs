@@ -23,6 +23,10 @@ public class SceneGameStartManager : MonoBehaviour
 
 	public AudioClip[] ExplodeSounds;
 	[SerializeField] private AudioSource _audioSource;
+	[SerializeField] private TransitionSequence _transitionSeq;
+	[SerializeField] private StepSequencer[] _beatSeqs;
+	private bool _waitingForTransition;
+	private bool _waitingForTransitionFinish;
 	// Hooked up in Editor End
 
 
@@ -32,6 +36,11 @@ public class SceneGameStartManager : MonoBehaviour
 #if AUTO_KILL_GAME
 	float autoKillTime = 90.0f;
 #endif
+
+	private void Awake()
+	{
+		_transitionSeq.Done += HandleTransitionDone;
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -105,11 +114,25 @@ public class SceneGameStartManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if (_waitingForTransitionFinish)
+		{
+			Debug.Log("Gonna load");
+			return;
+		}
+
+		if (_waitingForTransition)
+		{
+			Debug.Log("Waiting");
+			WaitForTransition();
+			return;
+		}
+
 		if(InputHelper.FIREBUTTON != "")
 		{
 			if (Input.GetButtonUp(InputHelper.FIREBUTTON) )
 			{
-				SceneManager.LoadScene("GamePlay");
+				Debug.Log("Fire");
+				_waitingForTransition = true;
 			}
 		}
 
@@ -123,5 +146,36 @@ public class SceneGameStartManager : MonoBehaviour
 
 	}
 
+	void WaitForTransition()
+	{
+		var goodToGo = false;
 
+		foreach (var seq in _beatSeqs)
+		{
+			if (!seq.Suspend && seq.CurrentTick == 0)
+			{
+				goodToGo = true;
+				break;
+			}
+		}
+
+		if (goodToGo)
+		{
+			foreach (var seq in _beatSeqs)
+			{
+				seq.Suspend = true;
+			}
+
+			_transitionSeq.Play();
+			_waitingForTransition = false;
+			_waitingForTransitionFinish = true;
+		}
+	}
+
+	void HandleTransitionDone ()
+	{
+		Debug.Log("Transition Done");
+		SceneManager.LoadScene("GamePlay");
+		_waitingForTransitionFinish = false;
+	}
 }

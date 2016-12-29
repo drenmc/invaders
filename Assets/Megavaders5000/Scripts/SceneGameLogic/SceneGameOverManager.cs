@@ -35,9 +35,8 @@ public class SceneGameOverManager : MonoBehaviour
 	float scoreDelay = -0.1f;
 	float scoreDelayReset = 0.1f;
 
-	float countdown = 10.0f;
-
-
+	[SerializeField] float countdownInitial = 5f;
+	float countdown;
 
 	void Awake()
 	{
@@ -66,6 +65,8 @@ public class SceneGameOverManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		countdown = countdownInitial;
+
 		audioSource = GetComponent<AudioSource>();
 
 		if ( highScoreViewManager.HasHighscore(score, wave)  )
@@ -100,6 +101,7 @@ public class SceneGameOverManager : MonoBehaviour
 		if(gameState == GameStates.GAME_OVER)
 		{
 			countdown -= Time.deltaTime;
+			Debug.Log(countdown);
 			if(countdown < 0)
 			{
 				SceneManager.LoadScene("GameStart");
@@ -140,7 +142,7 @@ public class SceneGameOverManager : MonoBehaviour
 
 				FireToContinue.SetActive(true);
 				Instructions.SetActive(false);
-				countdown = 10.0f;
+				countdown = countdownInitial;
 
 
 				

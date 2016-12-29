@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class TransitionSequence : MonoBehaviour 
 {
+	public event Action Done;
+
 	private StepSequencer[] _sequencers;
 
 	private void Awake()
@@ -28,5 +31,9 @@ public class TransitionSequence : MonoBehaviour
 	void HandleSequencerLooped(StepSequencer seq)
 	{
 		seq.Suspend = true;
+		if (Done != null)
+		{
+			Done();
+		}
 	}
 }
