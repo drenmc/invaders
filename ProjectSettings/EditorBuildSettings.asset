@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/Megavaders5000/Scenes/GamePlay.unity
   - enabled: 1
     path: Assets/Megavaders5000/Scenes/GameOver.unity
+  - enabled: 1
+    path: Assets/Megavaders5000/Scenes/GameOverYouWin.unity

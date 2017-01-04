@@ -92,6 +92,8 @@ public class SceneGamePlayManager : MonoBehaviour
     private float fireDelay     = 1.0f;             // Fire delay, we dont want a bunch of missiles flying out
     private int maxMissiles     = 10;               // Maximum allowable fired missiles
     
+	bool PlayerClearedScene = false;
+
     void Awake()
 	{
 		if(_instance == null)
@@ -112,13 +114,10 @@ public class SceneGamePlayManager : MonoBehaviour
     {
 		_metronome.Ticked += OnMetronomeTick;
         
-		enemiesList = new List<EnemyController>();
-
-		gameState = GameStates.START;
 
 		StartGame();
-//		Debug.Log("START CALLED! " +  this.currentScore);
 	}
+
 
 	void OnMetronomeTick(double tickTime)
 	{
@@ -138,6 +137,11 @@ public class SceneGamePlayManager : MonoBehaviour
     // Start the game; update the game start to PLAYING,
     public void StartGame()
     {
+		enemiesList = new List<EnemyController>();
+		gameState = GameStates.START;
+		Debug.Log("START CALLED! " +  this.currentScore);
+
+
 		_metronome.SetTempo(_baseTempo);
 
         Player.gameLogicManager = this;
@@ -180,7 +184,7 @@ public class SceneGamePlayManager : MonoBehaviour
     // Draw a grid of 11x5 containing our enemy invaders
     private void drawEnemies()
     {
-
+		PlayerClearedScene = false;
 		enemiesList.Clear();
 
         for (int cnt = 0; cnt < EnemyContainer.childCount; cnt++)	Destroy(EnemyContainer.GetChild(cnt).gameObject);
@@ -232,11 +236,18 @@ public class SceneGamePlayManager : MonoBehaviour
 		int enemyCount = enemiesList.Count;
         if (enemyCount <= 0)
         {
-            updateWave(1);
-            drawEnemies();
+			// No point in updating the WAVE
+            // updateWave(1);
+
+			PlayerClearedScene = true;
+			DoGameOver();
+			// No need to draw enemies again
+            //drawEnemies();
         }
 
     }
+
+
 
     public void DoGameOver()
     {
@@ -263,7 +274,10 @@ public class SceneGamePlayManager : MonoBehaviour
 			Debug.Log("wait");
 			yield return null;
 		}
-		SceneManager.LoadScene("GameOver");
+		if(PlayerClearedScene)
+			SceneManager.LoadScene( "GameOverYouWin" );
+		else
+			SceneManager.LoadScene("GameOver");
 	}
 
 
