@@ -22,7 +22,7 @@ public class KillAllEnemiesTest : MonoBehaviour
 			
 			SceneGamePlayManager sgpm = GetComponent<SceneGamePlayManager>();
 			Transform t = sgpm.EnemyContainer;
-			for(int cnt = 0; cnt <  t.childCount-2; cnt ++ )
+			for(int cnt = 0; cnt <  t.childCount; cnt ++ )
 			{
 				Transform childT = t.GetChild( cnt );
 				EnemyController ec = childT.GetComponent<EnemyController>();
