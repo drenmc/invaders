@@ -96,7 +96,8 @@ public class SceneGamePlayManager : MonoBehaviour
 
     void Awake()
 	{
-		if(_instance == null)
+		 
+	/*	  if(_instance == null)
 		{
 			_instance = this;
 			DontDestroyOnLoad(gameObject);
@@ -105,7 +106,7 @@ public class SceneGamePlayManager : MonoBehaviour
 		{
 			Destroy(this.gameObject);
 		}
-
+*/
 		_seqs = FindObjectsOfType<StepSequencer>();
 	}
 
