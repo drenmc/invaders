@@ -251,12 +251,13 @@ MonoBehaviour:
   _metronome: {fileID: 1821876630}
   _ticksPerMove: 4
   _baseTempo: 116
-  _downMovesPerTempoIncrease: 2
   _tempoBeatChangeInfo:
-  - _tempoIncrease: 10
+  - _duration: 3
+    _tempoIncrease: 10
     _seqsToEnable: []
     _seqsToDisable: []
-  - _tempoIncrease: 10
+  - _duration: 4
+    _tempoIncrease: 10
     _seqsToEnable:
     - {fileID: 1342538172}
     - {fileID: 1959756927}
@@ -267,10 +268,12 @@ MonoBehaviour:
     - {fileID: 1971548555}
     - {fileID: 1647376914}
     - {fileID: 441004899}
-  - _tempoIncrease: 10
+  - _duration: 5
+    _tempoIncrease: 10
     _seqsToEnable: []
     _seqsToDisable: []
-  - _tempoIncrease: 10
+  - _duration: 5
+    _tempoIncrease: 10
     _seqsToEnable:
     - {fileID: 428326205}
     - {fileID: 522405108}

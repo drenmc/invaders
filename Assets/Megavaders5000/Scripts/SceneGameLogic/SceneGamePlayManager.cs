@@ -15,6 +15,7 @@ public enum GameStates
 [System.Serializable]
 public class TempoBeatChangeInfo
 {
+	public int _duration = 3;
 	public double _tempoIncrease = 10;
 	public StepSequencer[] _seqsToEnable;
 	public StepSequencer[] _seqsToDisable;
@@ -40,7 +41,6 @@ public class SceneGamePlayManager : MonoBehaviour
 	[SerializeField] private int _ticksPerMove = 4;
 	private int _ticksWrapped;
 	[SerializeField] private double _baseTempo = 90.0;
-	[SerializeField] private int _downMovesPerTempoIncrease = 3;
 	[SerializeField] private TempoBeatChangeInfo[] _tempoBeatChangeInfo;
 	[SerializeField] private TransitionSequence _transitionSeq;
 	private StepSequencer[] _seqs;
@@ -327,12 +327,18 @@ public class SceneGamePlayManager : MonoBehaviour
             }
 
 			// increase the tempo
-			int modMoves = (++_downMovesDone) % _downMovesPerTempoIncrease;
+			int idx = _currentTempoBeatChangeIdx + 1;
 
-			if (modMoves == 0)
+			if (idx < _tempoBeatChangeInfo.Length)
 			{
-				_waitingForDownbeat = true;
+				if (++_downMovesDone >= _tempoBeatChangeInfo[idx]._duration)
+				{
+					_downMovesDone = 0;
+					Debug.Log("Tempo change after " + _tempoBeatChangeInfo[idx]._duration);
+					_waitingForDownbeat = true;
+				}
 			}
+
         }
 
         if (hitBottom)  DoGameOver();
